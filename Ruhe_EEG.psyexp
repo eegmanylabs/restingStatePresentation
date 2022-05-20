@@ -193,7 +193,7 @@
       </SoundComponent>
       <ParallelOutComponent name="lpt_port">
         <Param val="0x0378" valType="str" updates="None" name="address"/>
-        <Param val="True" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
         <Param val="lpt_port" valType="code" updates="None" name="name"/>
         <Param val="EIO" valType="str" updates="None" name="register"/>
