@@ -1,0 +1,35 @@
+2.6996 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'PTB', 'pyo', 'pygame'] (in that order).
+13.8246 	WARNING 	Couldn't measure a consistent frame rate!
+  - Is your graphics card set to sync to vertical blank?
+  - Are you running other processes on your computer?
+
+13.8253 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, autoLog=True, backendConf=UNKNOWN, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x00000226E9134AC0>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x00000226EB8E8A60>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=0, size=array([1920, 1080]), stencilBits=0, stereo=False, units='norm', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+13.8257 	EXP 	window1: mouseVisible = True
+13.8257 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+13.8258 	EXP 	window1: recordFrameIntervals = False
+13.8470 	EXP 	window1: recordFrameIntervals = True
+13.8597 	EXP 	Screen (0) actual frame rate measured at 417.76Hz
+13.8598 	EXP 	window1: recordFrameIntervals = True
+17.5222 	EXP 	Sound sound_2 set volume 1.000
+17.5505 	EXP 	Created text_2 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_2', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='norm', win=Window(...), wrapWidth=1)
+17.5529 	EXP 	Created text_5 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_5', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='norm', win=Window(...), wrapWidth=1)
+17.5530 	EXP 	Sound sound_4 set volume 1.000
+17.6115 	EXP 	Created text_4 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_4', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='norm', win=Window(...), wrapWidth=1)
+17.6116 	EXP 	Sound sound_1 set volume 1.000
+17.6160 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='norm', win=Window(...), wrapWidth=1)
+17.6161 	EXP 	Sound sound_3 set volume 1.000
+17.6199 	EXP 	Created text_3 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_3', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='norm', win=Window(...), wrapWidth=1)
+17.6301 	EXP 	Imported Gesamt.xlsx as conditions, 1 conditions, 12 params
+17.6307 	EXP 	Created sequence: sequential, trialTypes=1, nReps=1, seed=None
+17.6312 	EXP 	New trial (rep=0, index=0): {'Instruktion': 'audio\\Instruction_resting.wav', 'Ende': 'audio\\ende_aufzeichnung.wav', 'Instruktion_D': 'audio\\Instruction_resting.wav', 'Instruktion_E': 'audio English\\Instruction_resting_English.wav', 'Instruktion_F': None, 'Instruktion_S': None, 'Instruktion_R': None, 'Ende_D': 'audio\\ende_aufzeichnung.wav', 'Ende_E': 'udio English\\end_recording.wav', 'Ende_F': None, 'Ende_S': None, 'Ende_R': None}
+17.6316 	EXP 	window1: mouseVisible = False
+17.7145 	WARNING 	t of last frame was 3855.08ms (=1/0)
+17.7145 	EXP 	text_2: height = 0.1
+17.7145 	EXP 	text_2: height = 0.1
+17.7145 	EXP 	text_2: text = array(['Instruction to be displayed'], dtype=object)
+17.7145 	EXP 	text_5: height = 0.1
+17.7145 	EXP 	text_5: height = 0.1
+17.7145 	EXP 	text_5: text = 'Languages/Dutch/Instruction2.txt'
+17.7145 	EXP 	text_2: autoDraw = True
+21.8829 	DATA 	Keypress: escape
+22.6058 	EXP 	window1: mouseVisible = True

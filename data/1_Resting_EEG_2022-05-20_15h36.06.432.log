@@ -1,0 +1,33 @@
+2.2786 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'PTB', 'pyo', 'pygame'] (in that order).
+20.7962 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, autoLog=True, backendConf=UNKNOWN, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x000001FE74D29AF0>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x000001FE75A820A0>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=0, size=array([1920, 1080]), stencilBits=0, stereo=False, units='norm', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+20.7964 	EXP 	window1: mouseVisible = True
+20.7964 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+20.7964 	EXP 	window1: recordFrameIntervals = False
+20.8165 	EXP 	window1: recordFrameIntervals = True
+20.8364 	WARNING 	t of last frame was 4.04ms (=1/247)
+20.8434 	EXP 	Screen (0) actual frame rate measured at 442.49Hz
+20.8435 	EXP 	window1: recordFrameIntervals = False
+23.8676 	EXP 	Sound sound_instruct set volume 1.000
+23.8940 	EXP 	Created text_instruct = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_instruct', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='norm', win=Window(...), wrapWidth=1)
+23.8942 	EXP 	Sound sound_start_recording set volume 1.000
+23.8942 	EXP 	Sound sound_trial set volume 1.000
+23.9541 	EXP 	Created fixation_cross = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='fixation_cross', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='norm', win=Window(...), wrapWidth=1)
+23.9542 	EXP 	Sound sound_end_recording set volume 1.000
+23.9544 	EXP 	window1: mouseVisible = False
+24.1012 	EXP 	text_instruct: height = 0.1
+24.1012 	EXP 	text_instruct: height = 0.1
+24.1012 	EXP 	text_instruct: text = 'First, processes of the brain will be examined under relaxation conditions. It is therefore very important in this part of the experiment that you relax as much as possible. During the recording of the resting EEG, you will be instructed to open or close your eyes. If you are instructed to open your eyes or to keep them open, please direct your relaxed gaze at the monitor. If you are instructed to close your eyes or to keep them closed, follow this instruction in a relaxed manner. To begin, press the space bar.'
+24.1012 	EXP 	text_instruct: autoDraw = True
+47.1691 	DATA 	Keypress: space
+64.7722 	DATA 	Keypress: space
+64.7812 	EXP 	text_instruct: autoDraw = False
+65.4371 	DATA 	Keypress: space
+65.8479 	DATA 	Keypress: space
+68.0293 	EXP 	Imported Cond2_Resting_EEG_trials.xlsx as conditions, 8 conditions, 2 params
+68.0300 	EXP 	Created sequence: sequential, trialTypes=8, nReps=1, seed=None
+68.0304 	EXP 	New trial (rep=0, index=0): {'Anweisung': 'audio\\auf.wav', 'Instruction_trials': 'Instruction_close.wav'}
+68.0353 	EXP 	fixation_cross: autoDraw = True
+91.4380 	DATA 	Mouse: Left button down, pos=(887,170)
+91.5149 	DATA 	Mouse:  Left button up, pos=(887,170)
+98.1715 	DATA 	Keypress: escape
+99.1033 	EXP 	window1: mouseVisible = True

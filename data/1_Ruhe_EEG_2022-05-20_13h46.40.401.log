@@ -1,0 +1,32 @@
+2.2782 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'PTB', 'pyo', 'pygame'] (in that order).
+11.3320 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, autoLog=True, backendConf=UNKNOWN, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x000001E1D9CBAAC0>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x000001E1D97A2880>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=0, size=array([1920, 1080]), stencilBits=0, stereo=False, units='norm', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+11.3322 	EXP 	window1: mouseVisible = True
+11.3322 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+11.3322 	EXP 	window1: recordFrameIntervals = False
+11.3471 	EXP 	window1: recordFrameIntervals = True
+11.3667 	WARNING 	t of last frame was 3.89ms (=1/257)
+11.3673 	EXP 	Screen (0) actual frame rate measured at 562.65Hz
+11.3674 	EXP 	window1: recordFrameIntervals = False
+14.4717 	EXP 	Sound sound_instruct set volume 1.000
+14.4974 	EXP 	Created text_instruct = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_instruct', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='norm', win=Window(...), wrapWidth=1)
+14.4975 	EXP 	Sound sound_start_recording set volume 1.000
+14.4976 	EXP 	Sound sound_trial set volume 1.000
+14.5540 	EXP 	Created fixation_cross = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='fixation_cross', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='norm', win=Window(...), wrapWidth=1)
+14.5542 	EXP 	Sound sound_end_recording set volume 1.000
+14.5543 	EXP 	window1: mouseVisible = False
+14.5973 	EXP 	text_instruct: height = 0.1
+14.5973 	EXP 	text_instruct: height = 0.1
+14.5973 	EXP 	text_instruct: text = 'Instruction to be displayed'
+14.5973 	EXP 	text_instruct: autoDraw = True
+53.5717 	DATA 	Keypress: space
+58.6780 	DATA 	Keypress: space
+60.5125 	DATA 	Mouse: Left button down, pos=(868,612)
+60.6420 	DATA 	Mouse:  Left button up, pos=(868,612)
+61.1677 	DATA 	Mouse: Left button down, pos=(868,612)
+61.3850 	DATA 	Mouse:  Left button up, pos=(868,612)
+61.5993 	EXP 	text_instruct: autoDraw = False
+61.7952 	DATA 	Mouse: Left button down, pos=(868,612)
+61.9289 	DATA 	Mouse:  Left button up, pos=(868,612)
+76.7680 	DATA 	Keypress: space
+76.7758 	EXP 	text_instruct: autoDraw = False
+79.9431 	EXP 	window1: mouseVisible = True

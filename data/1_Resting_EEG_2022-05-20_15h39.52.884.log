@@ -1,0 +1,33 @@
+2.6674 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'PTB', 'pyo', 'pygame'] (in that order).
+12.3714 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, autoLog=True, backendConf=UNKNOWN, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x0000023BBEF0CAF0>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x0000023BBE18D6D0>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=0, size=array([1920, 1080]), stencilBits=0, stereo=False, units='norm', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+12.3721 	EXP 	window1: mouseVisible = True
+12.3722 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+12.3722 	EXP 	window1: recordFrameIntervals = False
+12.3995 	EXP 	window1: recordFrameIntervals = True
+12.4255 	WARNING 	t of last frame was 11.21ms (=1/89)
+12.4453 	WARNING 	t of last frame was 4.55ms (=1/219)
+12.4482 	EXP 	Screen (0) actual frame rate measured at 449.56Hz
+12.4483 	EXP 	window1: recordFrameIntervals = False
+15.9157 	EXP 	Sound sound_instruct set volume 1.000
+15.9496 	EXP 	Created text_instruct = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_instruct', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='norm', win=Window(...), wrapWidth=1)
+15.9498 	EXP 	Sound sound_start_recording set volume 1.000
+15.9499 	EXP 	Sound sound_trial set volume 1.000
+16.0437 	EXP 	Created fixation_cross = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.5, italic=False, languageStyle='LTR', name='fixation_cross', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='norm', win=Window(...), wrapWidth=1)
+16.0438 	EXP 	Sound sound_end_recording set volume 1.000
+16.0440 	EXP 	window1: mouseVisible = False
+16.1454 	EXP 	text_instruct: height = 0.1
+16.1454 	EXP 	text_instruct: height = 0.1
+16.1454 	EXP 	text_instruct: text = 'First, processes of the brain will be examined under relaxation conditions. It is therefore very important in this part of the experiment that you relax as much as possible. During the recording of the resting EEG, you will be instructed to open or close your eyes. If you are instructed to open your eyes or to keep them open, please direct your relaxed gaze at the monitor. If you are instructed to close your eyes or to keep them closed, follow this instruction in a relaxed manner. To begin, press the space bar.'
+16.1454 	EXP 	text_instruct: autoDraw = True
+53.4356 	DATA 	Mouse: Left button down, pos=(161,257)
+53.5017 	DATA 	Mouse:  Left button up, pos=(161,257)
+54.7075 	DATA 	Keypress: space
+54.7215 	EXP 	text_instruct: autoDraw = False
+57.9702 	EXP 	Imported Cond1_Resting_EEG_trials.xlsx as conditions, 8 conditions, 2 params
+57.9712 	EXP 	Created sequence: sequential, trialTypes=8, nReps=1, seed=None
+57.9717 	EXP 	New trial (rep=0, index=0): {'Anweisung': 'audio\\auf.wav', 'Instruction_trials': 'Instruction_open.wav'}
+57.9788 	EXP 	fixation_cross: autoDraw = True
+77.1114 	DATA 	Mouse: Left button down, pos=(495,352)
+77.2236 	DATA 	Mouse:  Left button up, pos=(495,352)
+78.2532 	DATA 	Keypress: escape
+79.1339 	EXP 	window1: mouseVisible = True

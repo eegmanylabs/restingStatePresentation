@@ -1,0 +1,96 @@
+2.2410 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'PTB', 'pyo', 'pygame'] (in that order).
+12.7393 	WARNING 	Couldn't measure a consistent frame rate!
+  - Is your graphics card set to sync to vertical blank?
+  - Are you running other processes on your computer?
+
+12.7401 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, autoLog=True, backendConf=UNKNOWN, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x00000223B5706AC0>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x00000223B49B36D0>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=0, size=array([1920, 1080]), stencilBits=0, stereo=False, units='norm', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+12.7405 	EXP 	window1: mouseVisible = True
+12.7406 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+12.7406 	EXP 	window1: recordFrameIntervals = False
+12.7771 	EXP 	window1: recordFrameIntervals = True
+12.9718 	EXP 	Screen (0) actual frame rate measured at 348.77Hz
+12.9718 	EXP 	window1: recordFrameIntervals = True
+15.8684 	EXP 	Sound sound_instruct set volume 1.000
+15.8923 	EXP 	Created text_instruct = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_instruct', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='norm', win=Window(...), wrapWidth=1)
+15.8924 	EXP 	Sound sound_start_recording set volume 1.000
+15.8925 	EXP 	Sound sound_trial set volume 1.000
+15.9456 	EXP 	Created fixation_cross = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='fixation_cross', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='norm', win=Window(...), wrapWidth=1)
+15.9457 	EXP 	Sound sound_end_recording set volume 1.000
+15.9458 	EXP 	window1: mouseVisible = False
+15.9875 	WARNING 	t of last frame was 3016.16ms (=1/0)
+15.9875 	EXP 	text_instruct: height = 0.1
+15.9875 	EXP 	text_instruct: height = 0.1
+15.9875 	EXP 	text_instruct: text = 'Instruction to be displayed'
+15.9875 	EXP 	text_instruct: autoDraw = True
+27.6516 	DATA 	Keypress: space
+27.8069 	DATA 	Keypress: space
+27.9852 	DATA 	Keypress: space
+29.1676 	DATA 	Mouse: Left button down, pos=(1050,516)
+29.2496 	DATA 	Mouse:  Left button up, pos=(1050,516)
+29.3648 	DATA 	Mouse: Left button down, pos=(1050,516)
+29.4359 	DATA 	Mouse:  Left button up, pos=(1050,516)
+55.1279 	DATA 	Mouse: Left button down, pos=(974,731)
+55.2361 	DATA 	Mouse:  Left button up, pos=(974,731)
+56.0746 	DATA 	Mouse: Left button down, pos=(974,731)
+56.1703 	DATA 	Mouse:  Left button up, pos=(974,731)
+56.5811 	DATA 	Mouse: Left button down, pos=(974,731)
+56.6495 	DATA 	Mouse:  Left button up, pos=(974,731)
+57.0079 	DATA 	Mouse: Left button down, pos=(974,731)
+57.1214 	DATA 	Mouse:  Left button up, pos=(974,731)
+57.4600 	DATA 	Mouse: Left button down, pos=(974,731)
+57.5750 	DATA 	Mouse:  Left button up, pos=(974,731)
+57.8448 	DATA 	Mouse: Left button down, pos=(974,731)
+57.9483 	DATA 	Mouse:  Left button up, pos=(974,731)
+58.2624 	DATA 	Mouse: Left button down, pos=(974,731)
+58.3854 	DATA 	Mouse:  Left button up, pos=(974,731)
+58.6322 	DATA 	Mouse: Left button down, pos=(974,731)
+58.7552 	DATA 	Mouse:  Left button up, pos=(974,731)
+59.0272 	DATA 	Mouse: Left button down, pos=(974,731)
+59.1510 	DATA 	Mouse:  Left button up, pos=(974,731)
+59.3877 	DATA 	Mouse: Left button down, pos=(974,731)
+59.5076 	DATA 	Mouse:  Left button up, pos=(974,731)
+60.5140 	DATA 	Keypress: space
+62.9754 	EXP 	text_instruct: autoDraw = False
+75.1497 	DATA 	Keypress: space
+75.1507 	EXP 	text_instruct: autoDraw = False
+75.7029 	DATA 	Keypress: space
+75.9180 	DATA 	Keypress: space
+76.1862 	DATA 	Keypress: space
+76.3312 	DATA 	Keypress: space
+76.5294 	DATA 	Keypress: space
+76.7335 	DATA 	Keypress: space
+78.1535 	EXP 	Imported Cond1_Resting_EEG_trials.xlsx as conditions, 8 conditions, 2 params
+78.1541 	EXP 	Created sequence: sequential, trialTypes=8, nReps=1, seed=None
+78.1544 	EXP 	New trial (rep=0, index=0): {'Anweisung': 'audio\\auf.wav', 'Instruction_trials': 'Instruction_open.wav'}
+78.1595 	EXP 	fixation_cross: autoDraw = True
+141.1466 	EXP 	New trial (rep=0, index=1): {'Anweisung': 'audio\\zu.wav', 'Instruction_trials': 'Instruction_close.wav'}
+141.1513 	EXP 	fixation_cross: autoDraw = False
+141.1513 	EXP 	fixation_cross: autoDraw = False
+141.1513 	EXP 	fixation_cross: autoDraw = True
+204.1352 	EXP 	New trial (rep=0, index=2): {'Anweisung': 'audio\\zu_lassen.wav', 'Instruction_trials': 'Instruction_leave_closed.wav'}
+204.1412 	EXP 	fixation_cross: autoDraw = False
+204.1412 	EXP 	fixation_cross: autoDraw = False
+204.1412 	EXP 	fixation_cross: autoDraw = True
+267.1248 	EXP 	New trial (rep=0, index=3): {'Anweisung': 'audio\\auf.wav', 'Instruction_trials': 'Instruction_open.wav'}
+267.1296 	EXP 	fixation_cross: autoDraw = False
+267.1296 	EXP 	fixation_cross: autoDraw = False
+267.1296 	EXP 	fixation_cross: autoDraw = True
+330.1169 	EXP 	New trial (rep=0, index=4): {'Anweisung': 'audio\\zu.wav', 'Instruction_trials': 'Instruction_close.wav'}
+330.1243 	EXP 	fixation_cross: autoDraw = False
+330.1243 	EXP 	fixation_cross: autoDraw = False
+330.1243 	EXP 	fixation_cross: autoDraw = True
+393.1098 	EXP 	New trial (rep=0, index=5): {'Anweisung': 'audio\\auf.wav', 'Instruction_trials': 'Instruction_open.wav'}
+393.1143 	EXP 	fixation_cross: autoDraw = False
+393.1143 	EXP 	fixation_cross: autoDraw = False
+393.1143 	EXP 	fixation_cross: autoDraw = True
+456.0989 	EXP 	New trial (rep=0, index=6): {'Anweisung': 'audio\\auf_lassen.wav', 'Instruction_trials': 'Instruction_leave_open.wav'}
+456.1042 	EXP 	fixation_cross: autoDraw = False
+456.1042 	EXP 	fixation_cross: autoDraw = False
+456.1042 	EXP 	fixation_cross: autoDraw = True
+519.0890 	EXP 	New trial (rep=0, index=7): {'Anweisung': 'audio\\zu.wav', 'Instruction_trials': 'Instruction_close.wav'}
+519.0938 	EXP 	fixation_cross: autoDraw = False
+519.0938 	EXP 	fixation_cross: autoDraw = False
+519.0938 	EXP 	fixation_cross: autoDraw = True
+582.0826 	EXP 	fixation_cross: autoDraw = False
+582.0826 	EXP 	fixation_cross: autoDraw = False
+585.1703 	EXP 	window1: mouseVisible = True

@@ -1,0 +1,75 @@
+2.2533 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'PTB', 'pyo', 'pygame'] (in that order).
+13.5705 	WARNING 	Couldn't measure a consistent frame rate!
+  - Is your graphics card set to sync to vertical blank?
+  - Are you running other processes on your computer?
+
+13.5710 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, autoLog=True, backendConf=UNKNOWN, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x000002C70A65AAF0>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x000002C70A4F85B0>, multiSample=False, name='window1', numSamples=2, pos=(0, 0), screen=0, size=array([1920, 1080]), stencilBits=0, stereo=False, units='norm', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+13.5713 	EXP 	window1: mouseVisible = True
+13.5714 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+13.5714 	EXP 	window1: recordFrameIntervals = False
+13.5988 	EXP 	window1: recordFrameIntervals = True
+13.8764 	WARNING 	Couldn't measure a consistent frame rate!
+  - Is your graphics card set to sync to vertical blank?
+  - Are you running other processes on your computer?
+
+16.8942 	EXP 	Sound sound_instruct set volume 1.000
+16.9186 	EXP 	Created text_instruct = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_instruct', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='norm', win=Window(...), wrapWidth=1)
+16.9188 	EXP 	Sound sound_start_recording set volume 1.000
+16.9188 	EXP 	Sound sound_trial set volume 1.000
+16.9785 	EXP 	Created fixation_cross = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='fixation_cross', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='norm', win=Window(...), wrapWidth=1)
+16.9787 	EXP 	Sound sound_end_recording set volume 1.000
+16.9788 	EXP 	window1: mouseVisible = False
+17.0682 	WARNING 	t of last frame was 3191.85ms (=1/0)
+17.0682 	EXP 	text_instruct: height = 0.1
+17.0682 	EXP 	text_instruct: height = 0.1
+17.0682 	EXP 	text_instruct: text = 'First, processes of the brain will be examined under relaxation conditions. It is therefore very important in this part of the experiment that you relax as much as possible. During the recording of the resting EEG, you will be instructed to open or close your eyes. If you are instructed to open your eyes or to keep them open, please direct your relaxed gaze at the monitor. If you are instructed to close your eyes or to keep them closed, follow this instruction in a relaxed manner. To begin, press the space bar.'
+17.0682 	EXP 	text_instruct: autoDraw = True
+50.7817 	DATA 	Keypress: space
+51.0447 	DATA 	Keypress: space
+51.2111 	DATA 	Keypress: space
+51.3707 	DATA 	Keypress: space
+57.5322 	DATA 	Keypress: space
+57.8361 	DATA 	Keypress: space
+58.1084 	DATA 	Keypress: space
+58.3908 	DATA 	Keypress: space
+58.6876 	DATA 	Keypress: space
+58.9563 	DATA 	Keypress: space
+59.2269 	DATA 	Keypress: space
+59.5123 	DATA 	Keypress: space
+59.8076 	DATA 	Keypress: space
+60.0955 	DATA 	Keypress: space
+60.3788 	DATA 	Keypress: space
+60.6871 	DATA 	Keypress: space
+60.9997 	DATA 	Keypress: space
+61.2794 	DATA 	Keypress: space
+61.5733 	DATA 	Keypress: space
+61.8493 	DATA 	Keypress: space
+62.0907 	DATA 	Keypress: space
+62.2573 	DATA 	Keypress: space
+62.4218 	DATA 	Keypress: space
+62.5841 	DATA 	Keypress: space
+62.7426 	DATA 	Keypress: space
+62.9306 	DATA 	Keypress: space
+63.0960 	DATA 	Keypress: space
+63.3132 	DATA 	Keypress: space
+63.5076 	DATA 	Keypress: space
+63.6969 	DATA 	Keypress: space
+63.9658 	DATA 	Keypress: space
+64.0566 	EXP 	text_instruct: autoDraw = False
+64.1544 	DATA 	Keypress: space
+64.1652 	EXP 	text_instruct: autoDraw = False
+64.3686 	DATA 	Keypress: space
+64.4935 	DATA 	Keypress: space
+67.1655 	EXP 	Imported Cond2_Resting_EEG_trials.xlsx as conditions, 8 conditions, 2 params
+67.1661 	EXP 	Created sequence: sequential, trialTypes=8, nReps=1, seed=None
+67.1665 	EXP 	New trial (rep=0, index=0): {'Anweisung': 'audio\\auf.wav', 'Instruction_trials': 'Instruction_close.wav'}
+67.1793 	WARNING 	t of last frame was 23.20ms (=1/43)
+67.1793 	EXP 	fixation_cross: autoDraw = True
+130.1615 	EXP 	New trial (rep=0, index=1): {'Anweisung': 'audio\\zu.wav', 'Instruction_trials': 'Instruction_open.wav'}
+130.1783 	EXP 	fixation_cross: autoDraw = False
+130.1783 	EXP 	fixation_cross: autoDraw = True
+193.1615 	EXP 	New trial (rep=0, index=2): {'Anweisung': 'audio\\zu_lassen.wav', 'Instruction_trials': 'Instruction_leave_open.wav'}
+193.1737 	EXP 	fixation_cross: autoDraw = False
+193.1737 	EXP 	fixation_cross: autoDraw = True
+256.1581 	EXP 	New trial (rep=0, index=3): {'Anweisung': 'audio\\auf.wav', 'Instruction_trials': 'Instrution_close.wav'}
+256.3486 	EXP 	window1: mouseVisible = True
