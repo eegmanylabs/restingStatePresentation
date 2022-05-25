@@ -7,7 +7,7 @@
     <Param val="auto" valType="str" updates="None" name="Data file delimiter"/>
     <Param val="'data/%s_%s_%s' %(expInfo['participant'], expName, expInfo['date'])" valType="code" updates="None" name="Data filename"/>
     <Param val="True" valType="bool" updates="None" name="Enable Escape"/>
-    <Param val="{'participant': '', 'language': 'English', 'parallel port': '03F8'}" valType="code" updates="None" name="Experiment info"/>
+    <Param val="{'participant': '', 'language': 'English', 'LPTport': ''}" valType="code" updates="None" name="Experiment info"/>
     <Param val="True" valType="bool" updates="None" name="Force stereo"/>
     <Param val="True" valType="bool" updates="None" name="Full-screen window"/>
     <Param val="html" valType="str" updates="None" name="HTML path"/>
@@ -66,7 +66,7 @@
   <Routines>
     <Routine name="Instruction_resting_EEG">
       <CodeComponent name="code_init">
-        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="# CODE SNIPPET TO DISPLAY AVAILABLE LANGUAGES&amp;#10;# UNFORTUNATELY DOESN'T WORK WITH PSYCHOPY'S&amp;#10;# DEFAULT DIALOGUE BOX&amp;#10;&amp;#10;#import os&amp;#10;## Check which directories are in the Languages&amp;#10;## folder&amp;#10;#directory = './Languages'&amp;#10;#available_languages = [f[1] for f in os.walk(directory)][0]&amp;#10;#disp_languages = ', '.join(available_languages)" valType="extendedCode" updates="constant" name="Before Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="import pandas &amp;#10;import random&amp;#10;# Read in instruction from instruction file&amp;#10;fname = './Languages/' + expInfo['language'] + '/Instruction.xlsx'&amp;#10;instruction = pandas.read_excel(fname).iloc[0, 0]&amp;#10;&amp;#10;# Define condition&amp;#10;condition = str(random.randint(1, 2))&amp;#10;" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
