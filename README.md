@@ -1,4 +1,4 @@
-# Resting state EEG
+# Resting state EEG: PsychoPy
 
 Authors:
 Dr. rer. nat. Johannes Rodrigues, Dipl. Psych. Julius-Maximilians University of Würzburg. johannes.rodrigues@uni-wuerzburg.de; 
