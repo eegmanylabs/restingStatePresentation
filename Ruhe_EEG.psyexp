@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" ?>
 <PsychoPy2experiment encoding="utf-8" version="2022.1.3">
   <Settings>
-    <Param val="use prefs" valType="str" updates="None" name="Audio latency priority"/>
-    <Param val="use prefs" valType="str" updates="None" name="Audio lib"/>
+    <Param val="3" valType="str" updates="None" name="Audio latency priority"/>
+    <Param val="ptb" valType="str" updates="None" name="Audio lib"/>
     <Param val="" valType="str" updates="None" name="Completed URL"/>
     <Param val="auto" valType="str" updates="None" name="Data file delimiter"/>
     <Param val="'data/%s_%s_%s' %(expInfo['participant'], expName, expInfo['date'])" valType="code" updates="None" name="Data filename"/>
     <Param val="True" valType="bool" updates="None" name="Enable Escape"/>
-    <Param val="{'participant': '', 'language': 'English', 'LPTport': '0x3FF8'}" valType="code" updates="None" name="Experiment info"/>
+    <Param val="{'participant': '', 'language': &quot;['English', 'Basque', 'Chinese', 'Dutch', 'French', 'German', 'Italian', 'Polish', 'Russian', 'Spanish']&quot;, 'trigger device': &quot;['parallel port', 'serial port (byte)', 'serial port (text)', 'Cedrus', 'LSL', 'no EEG (test)']&quot;, 'port address': '0x3FF8'}" valType="code" updates="None" name="Experiment info"/>
     <Param val="True" valType="bool" updates="None" name="Force stereo"/>
     <Param val="True" valType="bool" updates="None" name="Full-screen window"/>
     <Param val="html" valType="str" updates="None" name="HTML path"/>
@@ -24,7 +24,7 @@
     <Param val="1" valType="num" updates="None" name="Screen"/>
     <Param val="True" valType="bool" updates="None" name="Show info dlg"/>
     <Param val="False" valType="bool" updates="None" name="Show mouse"/>
-    <Param val="use prefs" valType="str" updates="None" name="Units"/>
+    <Param val="norm" valType="str" updates="None" name="Units"/>
     <Param val="" valType="str" updates="None" name="Use version"/>
     <Param val="[1920, 1080]" valType="code" updates="None" name="Window size (pixels)"/>
     <Param val="avg" valType="str" updates="None" name="blendMode"/>
@@ -68,11 +68,11 @@
       <CodeComponent name="code_init">
         <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="import pandas &amp;#10;import random&amp;#10;# Read in instruction from instruction file&amp;#10;fname = './Languages/' + expInfo['language'] + '/Instruction.xlsx'&amp;#10;instruction = pandas.read_excel(fname).iloc[0, 0]&amp;#10;&amp;#10;# Define condition&amp;#10;condition = str(random.randint(1, 2))&amp;#10;" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="import pandas&amp;#10;import random&amp;#10;&amp;#10;# If the start-up dialog was skipped, a dropdown field still holds its&amp;#10;# whole list of options: use the first option then.&amp;#10;for info_name in expInfo:&amp;#10;    if isinstance(expInfo[info_name], (list, tuple)):&amp;#10;        expInfo[info_name] = expInfo[info_name][0]&amp;#10;&amp;#10;&amp;#10;# ---------------------------------------------------------------------&amp;#10;# stop_with_message: show a message on the screen, then end the experiment.&amp;#10;# Used when something is wrong at the start (a missing file, a trigger&amp;#10;# port that cannot be opened), so that you notice it BEFORE the recording.&amp;#10;# ---------------------------------------------------------------------&amp;#10;def stop_with_message(message):&amp;#10;    print(message)&amp;#10;    logging.critical(message)    # also written to the .log file&amp;#10;    message_text = visual.TextStim(win, text=message + '\n\n(press any key to quit)',&amp;#10;                                   units='norm', height=0.06, wrapWidth=1.8,&amp;#10;                                   color='white')&amp;#10;    message_text.draw()&amp;#10;    win.flip()&amp;#10;    event.waitKeys()&amp;#10;    win.close()&amp;#10;    core.quit()&amp;#10;&amp;#10;&amp;#10;# PsychoPy 2023.1.2 and 2023.1.3 have a bug: their Sound component asks each&amp;#10;# sound for 'isFinished', which their sounds do not have (fixed in 2023.2).&amp;#10;# Without these lines those versions stop with an error when a voice command&amp;#10;# has finished. In all other versions these lines do nothing.&amp;#10;if hasattr(sound.Sound, 'isPlaying') and not hasattr(sound.Sound, 'isFinished'):&amp;#10;    def sound_is_finished(self):&amp;#10;        return (not self.isPlaying) and self.status in (STARTED, FINISHED)&amp;#10;    sound.Sound.isFinished = property(sound_is_finished)&amp;#10;&amp;#10;# The code needs these three fields of the start-up dialog&amp;#10;for info_name in ['language', 'trigger device', 'port address']:&amp;#10;    if info_name not in expInfo:&amp;#10;        stop_with_message('SETTINGS PROBLEM\n\n'&amp;#10;                          + 'The field &quot;' + info_name + '&quot; is missing in the start-up dialog.\n\n'&amp;#10;                          + 'Add it again in Experiment settings &gt; Experiment info '&amp;#10;                          + '(see the file README.md).')&amp;#10;&amp;#10;# ---------------------------------------------------------------------&amp;#10;# Language: check that all files are there, then read the instruction&amp;#10;# ---------------------------------------------------------------------&amp;#10;language_folder = 'Languages/' + expInfo['language'] + '/'&amp;#10;language_files = ['Instruction.xlsx',&amp;#10;                  'Instruction_start_recording.wav',&amp;#10;                  'Instruction_open.wav',&amp;#10;                  'Instruction_close.wav',&amp;#10;                  'Instruction_leave_open.wav',&amp;#10;                  'Instruction_leave_closed.wav',&amp;#10;                  'Instruction_end_recording.wav']&amp;#10;missing_files = []&amp;#10;for language_file in language_files:&amp;#10;    if not os.path.isfile(language_folder + language_file):&amp;#10;        missing_files.append(language_file)&amp;#10;if len(missing_files) &gt; 0:&amp;#10;    stop_with_message('LANGUAGE PROBLEM\n\n'&amp;#10;                      + 'The language &quot;' + expInfo['language'] + '&quot; cannot be used: '&amp;#10;                      + 'these files are missing in the folder &quot;' + language_folder + '&quot;:\n\n'&amp;#10;                      + '\n'.join(missing_files) + '\n\n'&amp;#10;                      + 'Check the language in the start-up dialog '&amp;#10;                      + 'and the file names in that folder.')&amp;#10;&amp;#10;# Read in instruction from instruction file&amp;#10;instruction = pandas.read_excel(language_folder + 'Instruction.xlsx').iloc[0, 0]&amp;#10;&amp;#10;# Define condition = the order of the eyes-open (o) and eyes-closed (c)&amp;#10;# minutes, chosen at random: 1 = o-c-c-o-c-o-o-c, 2 = c-o-o-c-o-c-c-o&amp;#10;condition = str(random.randint(1, 2))" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="new psychoJS.eventManager.Mouse({&quot;visible&quot;: false});&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="# hide the cursor&amp;#10;event.Mouse(visible=False)&amp;#10;&amp;#10;# rewrite the port address&amp;#10;lpt_port_conditions = parallel.ParallelPort(address=expInfo['LPTport'])&amp;#10;lpt_port = parallel.ParallelPort(address=expInfo['LPTport'])&amp;#10;&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Both" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="# hide the cursor&amp;#10;event.Mouse(visible=False)" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Py" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
@@ -81,6 +81,23 @@
         <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="code_init" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+      <CodeComponent name="code_triggers">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="# =====================================================================&amp;#10;#   EEG TRIGGERS  -  all the trigger code of this experiment is here&amp;#10;# =====================================================================&amp;#10;#&amp;#10;#   You normally do not have to change anything in this window.&amp;#10;#   The trigger device and its port address are chosen in the dialog&amp;#10;#   box that opens when the experiment starts:&amp;#10;#&amp;#10;#     trigger device        port address        what is sent for code 7&amp;#10;#     --------------------  ------------------  -------------------------&amp;#10;#     parallel port         0x3FF8, 0x378 ...   pins of the LPT port&amp;#10;#     serial port (byte)    COM3, COM4 ...      one byte with the value 7&amp;#10;#     serial port (text)    COM3, COM4 ...      the text &quot;7&quot;&amp;#10;#     Cedrus                (not used)          StimTracker, c-pod, m-pod&amp;#10;#     LSL                   (not used)          Lab Streaming Layer marker&amp;#10;#     no EEG (test)         (not used)          nothing, code is printed&amp;#10;#&amp;#10;#   Trigger codes of this experiment:&amp;#10;#     7 or 8   order of the minutes  (7 = eyes open first, 8 = eyes closed first)&amp;#10;#     1 or 2   a minute starts       (1 = eyes open,       2 = eyes closed)&amp;#10;#&amp;#10;#   How a trigger is sent (see &quot;Each Frame&quot; in the code components of the&amp;#10;#   routines Start_resting_EEG and Trial):&amp;#10;#     send_trigger(code)   when the voice command starts: the code is sent&amp;#10;#                          at the next screen refresh, together with the sound&amp;#10;#     update_trigger()     on every frame: sets the port back to 0 when&amp;#10;#                          the trigger has been on for PULSE_WIDTH seconds&amp;#10;&amp;#10;# ---------------------------------------------------------------------&amp;#10;#   SETTINGS  (change only if your EEG system needs something else)&amp;#10;# ---------------------------------------------------------------------&amp;#10;PULSE_WIDTH = 0.015        # seconds a trigger stays on, then the port goes back to 0&amp;#10;BAUD_RATE_BYTE = 115200    # speed of the port for 'serial port (byte)'&amp;#10;BAUD_RATE_TEXT = 9600      # speed of the port for 'serial port (text)'&amp;#10;&amp;#10;# ---------------------------------------------------------------------&amp;#10;#   CONNECT TO THE TRIGGER DEVICE&amp;#10;# ---------------------------------------------------------------------&amp;#10;trigger_device = str(expInfo['trigger device']).strip().lower()&amp;#10;port_address = str(expInfo['port address']).strip()&amp;#10;&amp;#10;trigger_port = None        # the open port or device&amp;#10;trigger_reset = True       # True  = we set the port back to 0 after PULSE_WIDTH&amp;#10;                           # False = the device ends the trigger by itself&amp;#10;trigger_advice = ''        # shown on the screen if the device cannot be opened&amp;#10;test_mode_warning = ''     # shown on the instruction screen in test mode&amp;#10;&amp;#10;&amp;#10;def open_parallel_port(address):&amp;#10;    # The parallel port needs the driver file inpoutx64.dll. PsychoPy up to&amp;#10;    # 2024.1 brings its own copy, newer versions do not. If a copy is in&amp;#10;    # the folder of this experiment, that copy is used.&amp;#10;    import ctypes&amp;#10;    driver_file = os.path.join(_thisDir, 'inpoutx64.dll')&amp;#10;    if os.path.isfile(driver_file):&amp;#10;        ctypes.windll.inpoutx64 = ctypes.WinDLL(driver_file)&amp;#10;    from psychopy import parallel&amp;#10;    if parallel.ParallelPort is None:&amp;#10;        import importlib&amp;#10;        importlib.reload(parallel)     # look for the driver file again&amp;#10;    if parallel.ParallelPort is None:&amp;#10;        raise RuntimeError('the driver file inpoutx64.dll was not found')&amp;#10;    if sys.platform == 'win32':&amp;#10;        address = int(address, 16)     # the text '0x3FF8' becomes a number&amp;#10;    port = parallel.ParallelPort(address=address)&amp;#10;    driver = getattr(port, 'port', None)&amp;#10;    if hasattr(driver, 'IsInpOutDriverOpen') and not driver.IsInpOutDriverOpen():&amp;#10;        raise RuntimeError('the parallel port driver is not running')&amp;#10;    return port&amp;#10;&amp;#10;&amp;#10;try:&amp;#10;    # ----- parallel port (LPT) ---------------------------------------&amp;#10;    if 'parallel' in trigger_device:&amp;#10;        trigger_advice = ('Check the port address: Windows Device Manager &gt; Ports (COM &amp; LPT) &gt; '&amp;#10;                          + 'your LPT port &gt; Properties &gt; Resources &gt; first number of the '&amp;#10;                          + 'I/O Range, written like 0x3FF8.\n'&amp;#10;                          + 'If the driver is missing or not running: see &quot;Parallel port&quot; '&amp;#10;                          + 'in the file README.md.')&amp;#10;        trigger_port = open_parallel_port(port_address)&amp;#10;&amp;#10;        def write_port(code):&amp;#10;            trigger_port.setData(code)&amp;#10;&amp;#10;    # ----- serial port, one byte per trigger --------------------------&amp;#10;    #       (most USB trigger boxes; 'ghent' in the Luck1996 script)&amp;#10;    elif 'byte' in trigger_device or 'ghent' in trigger_device:&amp;#10;        trigger_advice = ('Check the port name (like COM3) in Windows Device Manager &gt; '&amp;#10;                          + 'Ports (COM &amp; LPT), and that no other program uses the port.')&amp;#10;        import serial&amp;#10;        trigger_port = serial.Serial(port_address, baudrate=BAUD_RATE_BYTE)&amp;#10;&amp;#10;        def write_port(code):&amp;#10;            trigger_port.write(bytes([code]))&amp;#10;&amp;#10;    # ----- serial port, the code is sent as text ----------------------&amp;#10;    #       ('serial' in the Luck1996 script)&amp;#10;    elif 'serial' in trigger_device:&amp;#10;        trigger_advice = ('Check the port name (like COM3) in Windows Device Manager &gt; '&amp;#10;                          + 'Ports (COM &amp; LPT), and that no other program uses the port.')&amp;#10;        import serial&amp;#10;        trigger_port = serial.Serial(port_address, baudrate=BAUD_RATE_TEXT)&amp;#10;&amp;#10;        def write_port(code):&amp;#10;            trigger_port.write(str(code).encode())&amp;#10;&amp;#10;    # ----- Cedrus StimTracker / c-pod / m-pod -------------------------&amp;#10;    elif 'cedrus' in trigger_device:&amp;#10;        trigger_advice = ('Check that the Cedrus device is plugged in, that its driver is '&amp;#10;                          + 'installed and that the Python package pyxid2 is installed.')&amp;#10;        import pyxid2&amp;#10;        cedrus_devices = pyxid2.get_xid_devices()&amp;#10;        if len(cedrus_devices) == 0:&amp;#10;            raise RuntimeError('no Cedrus device was found')&amp;#10;        trigger_port = cedrus_devices[0]              # the first Cedrus device&amp;#10;        trigger_port.set_pulse_duration(int(PULSE_WIDTH * 1000))    # in ms&amp;#10;        trigger_reset = False                         # the device ends the trigger&amp;#10;&amp;#10;        def write_port(code):&amp;#10;            trigger_port.activate_line(bitmask=code)&amp;#10;&amp;#10;    # ----- Lab Streaming Layer (LSL) ----------------------------------&amp;#10;    elif 'lsl' in trigger_device:&amp;#10;        trigger_advice = 'Check that the Python package pylsl is installed.'&amp;#10;        import pylsl&amp;#10;        trigger_port = pylsl.StreamOutlet(pylsl.StreamInfo(&amp;#10;            'PsychoPyMarkers', 'Markers', 1, 0, 'int32', 'resting_state_eeg'))&amp;#10;        trigger_reset = False                         # a marker has no duration&amp;#10;&amp;#10;        def write_port(code):&amp;#10;            trigger_port.push_sample([code])&amp;#10;&amp;#10;    # ----- no EEG: to try out the experiment on any computer ----------&amp;#10;    elif 'test' in trigger_device or 'no eeg' in trigger_device:&amp;#10;        test_mode_warning = 'TEST MODE: NO TRIGGERS ARE SENT TO THE EEG'&amp;#10;&amp;#10;        def write_port(code):&amp;#10;            print('TRIGGER', code)&amp;#10;&amp;#10;    else:&amp;#10;        trigger_advice = ('Use one of: parallel port, serial port (byte), '&amp;#10;                          + 'serial port (text), Cedrus, LSL, no EEG (test).')&amp;#10;        raise RuntimeError('this trigger device is not known')&amp;#10;&amp;#10;except Exception as problem:&amp;#10;    stop_with_message('TRIGGER PROBLEM\n\n'&amp;#10;                      + 'The trigger device &quot;' + str(expInfo['trigger device']) + '&quot; '&amp;#10;                      + 'with the port address &quot;' + port_address + '&quot; could not be opened.\n\n'&amp;#10;                      + 'Reason: ' + str(problem) + '\n\n'&amp;#10;                      + trigger_advice)&amp;#10;&amp;#10;if trigger_reset:&amp;#10;    write_port(0)    # start with the port at 0, whatever was left on it&amp;#10;&amp;#10;# ---------------------------------------------------------------------&amp;#10;#   SENDING A TRIGGER&amp;#10;# ---------------------------------------------------------------------&amp;#10;trigger_pulse = {'off_time': None}    # when the current trigger must end&amp;#10;&amp;#10;&amp;#10;def send_trigger(code):&amp;#10;    # the trigger is sent at the next screen refresh&amp;#10;    win.callOnFlip(start_trigger, int(code))&amp;#10;&amp;#10;&amp;#10;def start_trigger(code):&amp;#10;    write_port(code)&amp;#10;    if trigger_reset:&amp;#10;        trigger_pulse['off_time'] = core.getTime() + PULSE_WIDTH&amp;#10;    logging.exp('TRIGGER ' + str(code) + ' sent')    # written to the .log file&amp;#10;&amp;#10;&amp;#10;def update_trigger():&amp;#10;    # called on every frame: ends the trigger when it has been on long enough&amp;#10;    if trigger_pulse['off_time'] is not None:&amp;#10;        if core.getTime() &gt;= trigger_pulse['off_time']:&amp;#10;            write_port(0)&amp;#10;            trigger_pulse['off_time'] = None" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Py" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="# make sure the trigger port is back at 0, then close it&amp;#10;if trigger_pulse['off_time'] is not None:&amp;#10;    write_port(0)&amp;#10;if hasattr(trigger_port, 'close'):&amp;#10;    trigger_port.close()" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="code_triggers" valType="code" updates="None" name="name"/>
       </CodeComponent>
       <TextComponent name="text_instruct">
         <Param val="white" valType="str" updates="constant" name="color"/>
@@ -125,25 +142,33 @@
         <Param val="False" valType="bool" updates="constant" name="storeCorrect"/>
         <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
       </KeyboardComponent>
+      <TextComponent name="text_test_mode">
+        <Param val="red" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Arial" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.07" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="text_test_mode" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0.9)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="$test_mode_warning" valType="str" updates="set every repeat" name="text"/>
+        <Param val="norm" valType="str" updates="None" name="units"/>
+        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
     </Routine>
     <Routine name="Start_resting_EEG">
-      <CodeComponent name="code_condition_triggers">
-        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="if int(condition) == 1: &amp;#10;    Condition_Trigger = 7&amp;#10;elif int(condition) == 2:&amp;#10;    Condition_Trigger = 8" valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Both" valType="str" updates="None" name="Code Type"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="code_condition_triggers" valType="code" updates="None" name="name"/>
-      </CodeComponent>
       <SoundComponent name="sound_start_recording">
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
@@ -159,23 +184,23 @@
         <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
         <Param val="1" valType="code" updates="constant" name="volume"/>
       </SoundComponent>
-      <ParallelOutComponent name="lpt_port_conditions">
-        <Param val="0x3FF2" valType="str" updates="None" name="address"/>
+      <CodeComponent name="code_condition_triggers">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="# Trigger that tells the order of the minutes in this recording:&amp;#10;# 7 = condition 1 (eyes open first), 8 = condition 2 (eyes closed first)&amp;#10;if int(condition) == 1:&amp;#10;    Condition_Trigger = 7&amp;#10;elif int(condition) == 2:&amp;#10;    Condition_Trigger = 8&amp;#10;thisExp.addData('Condition_Trigger', Condition_Trigger)    # keep it in the data file&amp;#10;trigger_sent = False" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Py" valType="str" updates="None" name="Code Type"/>
+        <Param val="# Send the trigger at the screen refresh at which the voice command starts.&amp;#10;# (This code component must stay BELOW the sound component in the routine.)&amp;#10;if sound_start_recording.status == STARTED and not trigger_sent:&amp;#10;    send_trigger(Condition_Trigger)&amp;#10;    trigger_sent = True&amp;#10;&amp;#10;update_trigger()    # sets the trigger port back to 0 after PULSE_WIDTH" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="lpt_port_conditions" valType="code" updates="None" name="name"/>
-        <Param val="EIO" valType="str" updates="None" name="register"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="$Condition_Trigger" valType="code" updates="None" name="startData"/>
-        <Param val="" valType="code" updates="None" name="startEstim"/>
-        <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="0.0" valType="code" updates="None" name="startVal"/>
-        <Param val="0" valType="code" updates="None" name="stopData"/>
-        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="0.015" valType="code" updates="constant" name="stopVal"/>
-        <Param val="True" valType="bool" updates="constant" name="syncScreen"/>
-        <Param val="False" valType="bool" updates="None" name="syncScreenRefresh"/>
-      </ParallelOutComponent>
+        <Param val="code_condition_triggers" valType="code" updates="None" name="name"/>
+      </CodeComponent>
       <TextComponent name="emptyText">
         <Param val="white" valType="color" updates="constant" name="color"/>
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
@@ -218,23 +243,23 @@
         <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
         <Param val="1" valType="code" updates="constant" name="volume"/>
       </SoundComponent>
-      <ParallelOutComponent name="lpt_port">
-        <Param val="0x0378" valType="str" updates="None" name="address"/>
+      <CodeComponent name="code_trial_triggers">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="trigger_sent = False" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Py" valType="str" updates="None" name="Code Type"/>
+        <Param val="# Trigger at the start of each minute, sent at the screen refresh at which&amp;#10;# the voice command starts. The code comes from the column 'Triggers' of&amp;#10;# Cond1_Resting_EEG_trials.xlsx (or Cond2_...): 1 = eyes open, 2 = eyes closed&amp;#10;# (This code component must stay BELOW the sound component in the routine.)&amp;#10;if sound_trial.status == STARTED and not trigger_sent:&amp;#10;    send_trigger(Triggers)&amp;#10;    trigger_sent = True&amp;#10;&amp;#10;update_trigger()    # sets the trigger port back to 0 after PULSE_WIDTH" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="lpt_port" valType="code" updates="None" name="name"/>
-        <Param val="EIO" valType="str" updates="None" name="register"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="$Triggers" valType="code" updates="None" name="startData"/>
-        <Param val="" valType="code" updates="None" name="startEstim"/>
-        <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="0.0" valType="code" updates="None" name="startVal"/>
-        <Param val="0" valType="code" updates="None" name="stopData"/>
-        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="0.015" valType="code" updates="constant" name="stopVal"/>
-        <Param val="True" valType="bool" updates="constant" name="syncScreen"/>
-        <Param val="False" valType="bool" updates="None" name="syncScreenRefresh"/>
-      </ParallelOutComponent>
+        <Param val="code_trial_triggers" valType="code" updates="None" name="name"/>
+      </CodeComponent>
       <TextComponent name="fixation_cross">
         <Param val="white" valType="color" updates="constant" name="color"/>
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
